@@ -38,9 +38,10 @@ public class MainActivity extends AppCompatActivity {
         myTextBox =  findViewById(R.id.deposit_amount);
         final RecyclerView recyclerView = findViewById(R.id.rvAnimals);
         totalSaved = findViewById(R.id.totalsavedTv);
-        //input = 50;
+        input = 50;
        //  total = 0;
-
+/**
+ * compute totals from both start amount and progressive incremental topups */
         for(int i = 1; i<=52; i++) {
 
             weekModel = new WeekModel(i, (i*input), total+=(i*input));
@@ -53,9 +54,10 @@ public class MainActivity extends AppCompatActivity {
         adapter = new MyRecyclerViewAdapter(this,weekModels);
 
         recyclerView.setAdapter(adapter);
-
+/**Display the total amount of savings*/
         totalSaved.setText(String.valueOf(weekModels.get(51).getTotal()));
-
+/**
+ * Add a textview watcher to update the adapter when user types in the new start amount*/
        myTextBox.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
@@ -76,9 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
                     total=0;
 
-                    //weekModels.get(0).setAmount(input);
-                  //  weekModels.get(0).setTotal(total+=(1*input));
-                    for( i = 0; i<=52; i++) {
+
+                    for( i = 1; i<=52; i++) {
                        weekModels.get(i).setTotal(total+=(i*input));
                         weekModels.get(i).setAmount(input*i);
                         weekModels.get(i).setWeek(i);

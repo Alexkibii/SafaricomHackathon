@@ -3,7 +3,7 @@ package com.example.a52weekschallenge.models;
 import android.arch.lifecycle.ViewModel;
 
 import com.orm.SugarRecord;
-
+/**Model for weekly savings*/
 public class WeekModel extends SugarRecord {
 
 

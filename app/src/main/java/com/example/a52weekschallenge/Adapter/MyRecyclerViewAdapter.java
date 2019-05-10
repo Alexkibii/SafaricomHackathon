@@ -87,7 +87,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
 
 
-
+    public void removeItem(int position) {
+        mWeek.remove(position);
+        notifyItemRemoved(position);
+    }
 
 
 }

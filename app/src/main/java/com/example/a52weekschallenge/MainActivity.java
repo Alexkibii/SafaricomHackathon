@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     MyRecyclerViewAdapter adapter;
     EditText myTextBox;
     TextView totalSaved;
-    long input;
+    long input=0;
     int total;
     int i;
     List<WeekModel> weekModels = new ArrayList<WeekModel>();
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         myTextBox =  findViewById(R.id.deposit_amount);
         final RecyclerView recyclerView = findViewById(R.id.rvAnimals);
         totalSaved = findViewById(R.id.totalsavedTv);
-        input = 50;
+        //input = 50;
        //  total = 0;
 
         for(int i = 1; i<=52; i++) {
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
                     //weekModels.get(0).setAmount(input);
                   //  weekModels.get(0).setTotal(total+=(1*input));
-                    for( i = 1; i<=52; i++) {
+                    for( i = 0; i<=52; i++) {
                        weekModels.get(i).setTotal(total+=(i*input));
                         weekModels.get(i).setAmount(input*i);
                         weekModels.get(i).setWeek(i);
@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                         weekModels.add(weekModel);
 
                         adapter.notifyDataSetChanged();
+
                     }
 
 

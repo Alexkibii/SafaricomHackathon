@@ -16,7 +16,7 @@ import com.example.a52weekschallenge.models.WeekModel;
 import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
-
+    private final int limit = 52;
     private List<WeekModel> mWeek;
 
     private LayoutInflater mInflater;
@@ -56,9 +56,17 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public int getItemCount() {
 
 
-        int itemcount = mWeek.size();
+      /*  int itemcount = mWeek.size();
         //return mWeek == null ? 0 : mWeek.size();
-        return itemcount;
+        return itemcount;*/
+        if(mWeek.size() > limit){
+            return limit;
+        }
+        else
+        {
+            return mWeek.size();
+        }
+
     }
 
 
@@ -78,9 +86,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             totalTv = itemView.findViewById(R.id.tvTotal);
 
         }
-
-
-
 
     }
 

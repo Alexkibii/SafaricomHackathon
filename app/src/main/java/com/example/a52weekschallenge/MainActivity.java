@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         myTextBox =  findViewById(R.id.deposit_amount);
         final RecyclerView recyclerView = findViewById(R.id.rvAnimals);
         totalSaved = findViewById(R.id.totalsavedTv);
-        input = 50;
+        input = 0;
        //  total = 0;
 /**
  * compute totals from both start amount and progressive incremental topups */
@@ -93,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+                }else{
+                    input = 0;
+                    totalSaved.setText("0");
                 }
 
 

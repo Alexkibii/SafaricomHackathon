@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">52WeeksChallenge</string>
-    <string name="enter_deposit_amount">Deposit</string>
+    <string name="enter_deposit_amount">Starting Amount</string>
     <string name="deposittext">Deposit</string>
     <string name="total">Total</string>
     <string name="week">Week</string>
+    <string name="total_amount">Total Saved</string>
 </resources>

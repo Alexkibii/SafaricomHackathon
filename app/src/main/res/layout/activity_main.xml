@@ -6,35 +6,67 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/headerlyt"
         android:layout_width="match_parent"
-        android:layout_height="116dp"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
         android:padding="30dp"
-        android:orientation="horizontal">
+        android:weightSum="3">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="2">
 
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/enter_deposit_amount" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:text="@string/enter_deposit_amount"
+                android:textColor="@color/colorPrimary" />
 
-        <EditText
-            android:id="@+id/deposit_amount"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:maxLength="9"
-            android:inputType="number"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp" />
+            <EditText
+                android:id="@+id/deposit_amount"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:inputType="number"
+                android:maxLength="9"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:id="@+id/totalsavedTv"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_marginStart="50dp">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="30dp"
+                android:text="@string/total_amount"
+                android:layout_marginRight="30dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/totalsavedTv"
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="0dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1" />
+        </LinearLayout>
     </LinearLayout>
 
  <android.support.v7.widget.RecyclerView

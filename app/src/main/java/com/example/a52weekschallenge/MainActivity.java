@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText myTextBox;
     TextView totalSaved;
     long input = 0;
-    int total;
+    long total;
     int i;
     List<WeekModel> weekModels = new ArrayList<WeekModel>();
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         myTextBox = findViewById(R.id.deposit_amount);
         final RecyclerView recyclerView = findViewById(R.id.rvAnimals);
         totalSaved = findViewById(R.id.totalsavedTv);
-        input = 2;
+        input = 0;
 
 /**
  * compute totals from both start amount and progressive incremental topups */
@@ -81,24 +81,12 @@ public class MainActivity extends AppCompatActivity {
                         weekModels.get(i).setAmount(input * (i+1));
                         weekModels.get(i).setWeek(i+1);
 
-                      /*  weekModel = new WeekModel(i+1, ((i+1) * input), total += ((i+1) * input));
-                        weekModels.add(weekModel);*/
+
 
                         adapter.notifyDataSetChanged();
                     }
 
-                    /*for (i = 0; i <= 52; i++) {
-                      //v bvvv  Toast.makeText(getApplicationContext(),total += ((1) * input), Toast.LENGTH_SHORT ).show();
-                        weekModels.get(i).setTotal(total += ((i+1) * input));
-                        weekModels.get(i).setAmount(input * (i+1));
-                        weekModels.get(i).setWeek(i+1);
 
-                        weekModel = new WeekModel((i+1), ((i+1) * input), total += ((i+1) * input));
-                        weekModels.add(weekModel);
-
-                        adapter.notifyDataSetChanged();
-
-                    }*/
 
                     totalSaved.setText(String.valueOf(weekModels.get(51).getTotal()));
                 } else {
